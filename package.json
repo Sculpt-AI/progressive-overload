@@ -1,0 +1,49 @@
+{
+  "name": "@sculpt-ai/progressive-overload",
+  "version": "0.0.1",
+  "description": "Progressive overload & 1RM prescription engine — the math behind Sculpt AI's workout generation",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sculpt-AI/progressive-overload.git"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^4.1.9"
+  },
+  "keywords": [
+    "sculpt",
+    "progressive-overload",
+    "1rm",
+    "fitness",
+    "strength-training",
+    "rpe"
+  ]
+}

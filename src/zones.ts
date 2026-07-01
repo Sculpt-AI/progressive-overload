@@ -9,7 +9,7 @@ export interface GoalTarget {
 }
 
 const TARGET_REPS: Record<TrainingGoal, number> = {
-  STRENGTH: 3,
+  STRENGTH: 5,
   HYPERTROPHY: 8,
   ENDURANCE: 15,
 };

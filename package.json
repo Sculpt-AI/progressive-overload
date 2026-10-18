@@ -1,6 +1,6 @@
 {
   "name": "@sculpt-ai/progressive-overload",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Progressive overload & 1RM prescription engine — the math behind Sculpt AI's workout generation",
   "license": "MIT",
   "main": "./dist/index.js",

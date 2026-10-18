@@ -49,6 +49,11 @@ describe('nextPrescription §9a', () => {
     const r = nextPrescription(base({ best: { weight: 110, reps: 5 }, rir: null, missStreak: 1 }));
     expect(r.action).toBe('EASE_READINESS'); near(r.capacity1RM, 123.75); expect(r.missStreak).toBe(0);
   });
+  it('no-RIR miss counts only below the range low', () => {
+    const strength = (reps: number) => nextPrescription(base({ goal: 'STRENGTH', best: { weight: 110, reps }, rir: null }));
+    expect(strength(4).missStreak).toBe(0);
+    expect(strength(3).missStreak).toBe(1);
+  });
   it('row10 no-RIR tested but reps≥target → HOLD', () => {
     const r = nextPrescription(base({ best: { weight: 100, reps: 8 }, rir: null }));
     expect(r.action).toBe('HOLD'); near(r.capacity1RM, 147);

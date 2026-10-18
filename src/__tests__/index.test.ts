@@ -6,7 +6,7 @@ describe('public barrel', () => {
     expect(typeof setE1RM).toBe('function');
     expect(typeof nextPrescription).toBe('function');
     expect(typeof runBatch).toBe('function');
-    expect(GOAL_TARGETS.HYPERTROPHY.reps).toBe(8);
+    expect(GOAL_TARGETS.HYPERTROPHY.low).toBe(8);
   });
 
   it('runE1RMBatch echoes ids, zeroes empty sets, and matches setE1RM', () => {

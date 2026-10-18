@@ -56,7 +56,7 @@ export function nextPrescription(input: PrescriptionInput): PrescriptionResult {
   }
 
   const pct = GOAL_TARGETS[goal].pct;
-  const targetReps = GOAL_TARGETS[goal].reps;
+  const rangeLow = GOAL_TARGETS[goal].low;
 
   if (input.capacity1RM == null) {
     if (!best) return { pr1RM: input.pr1RM, capacity1RM: input.capacity1RM, prescribedWeight, action: 'HOLD_NO_DATA', missStreak: prevMiss };
@@ -86,7 +86,7 @@ export function nextPrescription(input: PrescriptionInput): PrescriptionResult {
       action = 'RAISE';
       resultMissStreak = 0;
     }
-  } else if (tested && (hasRIR ? ((rir as number) <= GENUINE_RIR && s < cap * (1 - EPS)) : (best.reps < targetReps && s < cap))) {
+  } else if (tested && (hasRIR ? ((rir as number) <= GENUINE_RIR && s < cap * (1 - EPS)) : (best.reps < rangeLow && s < cap))) {
     const newStreak = prevMiss + 1;
     if (newStreak >= MISS_LIMIT) {
       target = s;
